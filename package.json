@@ -1,25 +1,38 @@
 {
-  "name": "redux-keyed-reducer-immutable",
-  "version": "0.0.0",
-  "description": "ImmutableJS implementation for redux-keyed-reducer",
-  "main": "index.ts",
-  "dependencies": {
-    "immutable": "^4.0.0-rc.12"
-  },
-  "devDependencies": {
-    "@types/tape": "^4.2.32",
-    "redux": "^4.0.1",
-    "redux-keyed-reducer": "^0.1.1",
-    "tape": "^4.9.1",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.2.2"
-  },
-  "scripts": {
-    "test": "ts-node tape *.test.ts"
-  },
-  "keywords": [
-    "redux"
-  ],
-  "author": "Samuel Ferrell <samcferrell@gmail.com>",
-  "license": "MIT"
+    "name": "redux-keyed-reducer-immutable",
+    "author": "Samuel Ferrell <samcferrell@gmail.com>",
+    "description": "ImmutableJS implementation for redux-keyed-reducer",
+    "license": "MIT",
+    "version": "0.0.0",
+    "main": "./lib/index.js",
+    "types": "./lib/index.d.ts",
+    "sideEffects": false,
+    "repository": {
+        "type": "git",
+        "url": "https://git.sr.ht/~samcf/redux-keyed-reducer-immutable"
+    },
+    "scripts": {
+        "prepare": "npm run-script test",
+        "test": "tsc && tape ./lib/index.test.js"
+    },
+    "keywords": [
+        "redux"
+    ],
+    "files": [
+        "lib/index.js",
+        "lib/index.d.ts",
+        "LICENSE"
+    ],
+    "devDependencies": {
+        "@types/tape": "^4.2.32",
+        "redux": "^4.0.1",
+        "redux-keyed-reducer": "^0.1.1",
+        "redux-thunk": "^2.3.0",
+        "tape": "^4.9.1",
+        "ts-node": "^7.0.1",
+        "typescript": "^3.2.2"
+    },
+    "dependencies": {
+        "immutable": "^4.0.0-rc.12"
+    }
 }
