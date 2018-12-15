@@ -53,7 +53,8 @@ export function createKeyedReducer<S, A extends Action = AnyAction>(
 
         const storeKeys = getStoreKeys(action);
         if (storeKey in storeKeys) {
-            return state.set(storeKeys[storeKey], reducer(state.get(storeKeys[storeKey]), action));
+            const instanceName = storeKeys[storeKey];
+            return state.set(instanceName, reducer(state.get(instanceName), action));
         }
 
         if (options.isKeyRequired) {
