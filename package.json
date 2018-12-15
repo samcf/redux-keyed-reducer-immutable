@@ -1,0 +1,25 @@
+{
+  "name": "redux-keyed-reducer-immutable",
+  "version": "0.0.0",
+  "description": "ImmutableJS implementation for redux-keyed-reducer",
+  "main": "index.ts",
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12"
+  },
+  "devDependencies": {
+    "@types/tape": "^4.2.32",
+    "redux": "^4.0.1",
+    "redux-keyed-reducer": "^0.1.1",
+    "tape": "^4.9.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "test": "ts-node tape *.test.ts"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "Samuel Ferrell <samcferrell@gmail.com>",
+  "license": "MIT"
+}
