@@ -23,7 +23,7 @@ const counter = (state: ICounterState = 0, action: Action<CounterActions>) => {
     }
 };
 
-test("foo", (assert) => {
+test("keyed reducer state is an Immutable map", (assert) => {
     const reducer = createKeyedReducer(counter, "counter", { isKeyRequired: false });
     const store = createStore(combineReducers({
         counter: reducer,
@@ -36,10 +36,12 @@ test("foo", (assert) => {
 
     actions.onIncrement();
 
+    const state = store.getState();
     assert.ok(
-        store.getState().counter.equals(Immutable.Map({
-            default: 0,
-            testKey: 1,
-        })),
+        state.counter.equals(
+            Immutable.Map({ default: 0, testKey: 1 }),
+        ),
+        JSON.stringify(state.counter),
     );
+    assert.end();
 });

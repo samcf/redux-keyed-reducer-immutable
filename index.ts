@@ -50,8 +50,10 @@ export function createKeyedReducer<S, A extends Action = AnyAction>(
     const initialState = reducer((void 0), SENTINEL_ACTION as A);
     return (state: IKeyedState<S> = Immutable.Map(), action: A) => {
         state = state.set(DEFAULT_INSTANCE_KEY, initialState);
-        if (storeKey in getStoreKeys(action)) {
-            return state.set(storeKey, reducer(state.get(storeKey), action));
+
+        const storeKeys = getStoreKeys(action);
+        if (storeKey in storeKeys) {
+            return state.set(storeKeys[storeKey], reducer(state.get(storeKeys[storeKey]), action));
         }
 
         if (options.isKeyRequired) {
